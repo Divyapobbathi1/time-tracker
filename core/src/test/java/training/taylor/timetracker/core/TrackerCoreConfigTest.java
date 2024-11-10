@@ -1,7 +1,7 @@
 package training.taylor.timetracker.core;
 
 import static org.junit.Assert.*;
-
+import java.time.LocalDateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +19,12 @@ import java.util.List;
 public class TrackerCoreConfigTest {
 
     @Autowired
-    List<TimeEntry> entries;
+    List<TimeEntry> entries = new ArrayList<>();
+    entries.add(new TimeEntry(LocalDateTime.of(2023, 11, 10, 10 , 0),LocalDateTime.of(2023, 11, 10, 10 , 0)))
 
-    // @Test
-    // public void testMe() {
-    //     assertNotNull(entries);
-    // }
+    @Test
+    public void testMe() {
+        assertNotNull(entries);
+    }
 
 }
